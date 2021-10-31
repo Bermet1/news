@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 # News
 class News(models.Model):
     title = models.CharField(max_length=50)
-    link = models
+    link = models.URLField(max_length=250)
     creation_date = models.DateTimeField(auto_now_add=True)
     votes = models.IntegerField(default=0)
     author_name = models.ForeignKey(User, related_name='UserPosts', on_delete=models.CASCADE)

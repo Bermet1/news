@@ -20,19 +20,19 @@ class VoteSerializer(serializers.ModelSerializer):
 
 class NewsListSerializer(serializers.ModelSerializer):
     """List of News"""
+
     class Meta:
         model = News
-        fields = ['title', 'link', ]
+        fields = ['title', 'link']
 
 
 class NewsDetailSerializer(serializers.ModelSerializer):
     """Detail News"""
 
-    votes = VoteSerializer()
-    author_name = serializers.SlugRelatedField(slug_field="name", read_only=True)
-
     class Meta:
         model = News
+        fields = "__all__"
+
 
 class CommentSerializer(serializers.ModelSerializer):
     """Comments"""

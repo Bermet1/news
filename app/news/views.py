@@ -8,12 +8,6 @@ from .models import *
 from rest_framework.views import APIView
 from rest_framework.response import Response
 
-# class CreateVoteView(generics.CreateAPIView):
-#     permission_classes = (permissions.IsAuthenticated,)
-#     serializer_class = VoteSerializer
-
-#     def perform_create(self, serializer):
-#         serializer.save(user=self.request.user)
 
 class NewsListView(APIView):
     """List of News"""

@@ -18,12 +18,15 @@ class VoteSerializer(serializers.ModelSerializer):
         fields = ['news', 'value']
 
 
-class NewsListSerializer(serializers.ModelSerializer):
+class NewsListSerializer(serializers.Serializer):
     """List of News"""
+
+    title = serializers.CharField(max_length=100)
+    link = serializers.URLField(max_length=250)
 
     class Meta:
         model = News
-        fields = ['title', 'link']
+        fields = ['title', 'link'] 
 
 
 class NewsDetailSerializer(serializers.ModelSerializer):

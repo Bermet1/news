@@ -18,7 +18,7 @@ class VoteSerializer(serializers.ModelSerializer):
         fields = ['news', 'value']
 
 
-class NewsListSerializer(serializers.Serializer):
+class NewsListSerializer(serializers.ModelSerializer):
     """List of News"""
 
     class Meta:
